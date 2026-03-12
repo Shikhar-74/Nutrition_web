@@ -12,9 +12,9 @@ export default function Contact() {
       <section className="bg-emerald-900 py-20 relative overflow-hidden mb-16">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-4">Let's Connect</h1>
+          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-4">Let&apos;s Connect</h1>
           <p className="text-emerald-100 text-lg max-w-2xl mx-auto">
-            Have questions about our programs or ready to start your journey? We'd love to hear from you.
+            Have questions about our programs or ready to start your journey? We&apos;d love to hear from you.
           </p>
         </div>
       </section>

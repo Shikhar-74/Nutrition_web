@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function WhatsAppFloatingButton() {
   const [isVisible, setIsVisible] = useState(false);

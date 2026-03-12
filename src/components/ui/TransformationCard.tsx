@@ -41,7 +41,7 @@ export default function TransformationCard({
         <div className="inline-block self-start py-1.5 px-4 rounded-full bg-[#E8EDE5] text-[#2B5740] text-xs font-extrabold tracking-wide mb-6 uppercase">
           {resultDetails}
         </div>
-        <p className="text-muted-foreground italic leading-relaxed font-light text-black/80">"{testimonial}"</p>
+        <p className="text-muted-foreground italic leading-relaxed font-light text-black/80">&quot;{testimonial}&quot;</p>
       </div>
     </div>
   );

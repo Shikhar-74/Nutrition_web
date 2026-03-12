@@ -39,17 +39,17 @@ export default function About() {
             
             <div className="order-1 lg:order-2">
               <h2 className="font-heading text-3xl sm:text-4xl font-bold text-stone-900 mb-6">
-                Hello, I'm Dr. Prashant. Let's make wellness your new normal.
+                Hello, I&apos;m Dr. Prashant. Let&apos;s make wellness your new normal.
               </h2>
               <div className="space-y-6 text-lg text-stone-600 leading-relaxed">
                 <p>
-                  My journey into nutrition began over 12 years ago when I saw firsthand how diet could reverse chronic illnesses that medication alone couldn't fix. Since then, I've dedicated my career to understanding the complex relationship between the human body, lifestyle, and food.
+                  My journey into nutrition began over 12 years ago when I saw firsthand how diet could reverse chronic illnesses that medication alone couldn&apos;t fix. Since then, I&apos;ve dedicated my career to understanding the complex relationship between the human body, lifestyle, and food.
                 </p>
                 <p>
-                  As a Certified Clinical Nutritionist, I focus on evidence-based dietary strategies. However, science alone isn't enough. We need practical, culturally relevant ways to apply this knowledge to your busy life. 
+                  As a Certified Clinical Nutritionist, I focus on evidence-based dietary strategies. However, science alone isn&apos;t enough. We need practical, culturally relevant ways to apply this knowledge to your busy life. 
                 </p>
                 <p>
-                  I don't believe in fad diets, extreme calorie restriction, or eliminating your favorite cultural foods. True health is about balance, nourishment, and creating a joyful relationship with what you eat.
+                  I don&apos;t believe in fad diets, extreme calorie restriction, or eliminating your favorite cultural foods. True health is about balance, nourishment, and creating a joyful relationship with what you eat.
                 </p>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function About() {
           <h2 className="font-heading text-3xl font-bold text-stone-900 mb-8">My Philosophy</h2>
           <div className="bg-white p-10 sm:p-16 rounded-[2.5rem] shadow-sm border border-emerald-100">
             <p className="text-xl sm:text-2xl text-stone-700 italic leading-relaxed mb-8">
-              "Nutrition should be a source of joy, healing, and vitality—not stress or restriction. Every body is unique, and our goal is to find the perfect nutritional rhythm that lets you thrive naturally."
+              &quot;Nutrition should be a source of joy, healing, and vitality—not stress or restriction. Every body is unique, and our goal is to find the perfect nutritional rhythm that lets you thrive naturally.&quot;
             </p>
             <div className="grid sm:grid-cols-2 gap-4 text-left">
               {[

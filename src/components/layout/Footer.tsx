@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-stone-400">
-              Empowering you to live a healthier, happier life through personalized nutrition and expert wellness guidance. Let's start your health journey today.
+              Empowering you to live a healthier, happier life through personalized nutrition and expert wellness guidance. Let&apos;s start your health journey today.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-stone-400 hover:text-emerald-400 transition-colors p-2 hover:bg-stone-800 rounded-full">

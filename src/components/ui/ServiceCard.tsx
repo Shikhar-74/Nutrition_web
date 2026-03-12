@@ -10,23 +10,29 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, icon, href = "/services" }: ServiceCardProps) {
   return (
-    <div className="group relative bg-white/80 backdrop-blur-md rounded-[2rem] p-8 shadow-sm hover:shadow-2xl hover:shadow-[#2B5740]/10 border border-white/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col h-full z-10">
-      {/* Hover Background Reveal */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#E8EDE5]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-      
-      <div className="w-16 h-16 bg-[#E8EDE5] text-[#2B5740] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-[#1F3624] group-hover:text-[#BCE2B9] group-hover:rotate-3 transition-all duration-500 ease-out shadow-sm">
-        {icon}
+    <Link href={href} className="group relative block w-full">
+      <div className="bg-white/90 backdrop-blur-sm rounded-[3rem] p-6 pr-10 shadow-sm hover:shadow-xl hover:shadow-[#2B5740]/10 border border-stone-100/60 transition-all duration-500 hover:-translate-y-1.5 flex items-center gap-6 h-full overflow-hidden">
+        {/* Hover Background Reveal */}
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-nutrition-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
+        <div className="w-20 h-20 bg-nutrition-accent/10 text-nutrition-primary rounded-full flex items-center justify-center shrink-0 group-hover:bg-nutrition-primary group-hover:text-white transition-all duration-500 ease-out shadow-sm border border-nutrition-accent/20">
+          <div className="group-hover:scale-110 transition-transform duration-300">
+            {icon}
+          </div>
+        </div>
+
+        <div className="flex-grow">
+          <div className="flex items-center justify-between mb-1.5">
+            <h3 className="text-xl font-heading font-bold text-foreground group-hover:text-nutrition-primary transition-colors duration-300">
+              {title}
+            </h3>
+            <ArrowRight className="w-5 h-5 text-nutrition-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500" />
+          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+            {description}
+          </p>
+        </div>
       </div>
-      <h3 className="text-2xl font-heading font-bold text-foreground mb-4 group-hover:text-[#2B5740] transition-colors duration-300">{title}</h3>
-      <p className="text-muted-foreground mb-8 flex-grow leading-relaxed font-light">{description}</p>
-      
-      <Link href={href} className="inline-flex items-center text-[#2B5740] font-semibold group-hover:text-[#1F3624] transition-colors mt-auto uppercase tracking-wider text-sm">
-        Read more 
-        <span className="relative overflow-hidden ml-2 w-5 h-5 flex items-center justify-center">
-          <ArrowRight className="absolute w-4 h-4 -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out" />
-          <ArrowRight className="absolute w-4 h-4 translate-x-0 opacity-100 group-hover:translate-x-full group-hover:opacity-0 transition-all duration-500 ease-out" />
-        </span>
-      </Link>
-    </div>
+    </Link>
   );
 }
