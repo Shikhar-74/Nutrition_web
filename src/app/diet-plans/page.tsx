@@ -53,10 +53,12 @@ export default function DietPlans() {
             {plans.map((plan, idx) => (
               <div key={idx} className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 flex flex-col transform hover:-translate-y-1">
                 <div className="aspect-4/3 overflow-hidden relative">
-                  <img 
+                  <Image 
                     src={plan.image} 
                     alt={plan.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 flex gap-2">
                     {plan.tags.map(tag => (

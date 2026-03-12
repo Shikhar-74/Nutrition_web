@@ -70,10 +70,12 @@ export default function Blog() {
             {posts.map((post, idx) => (
               <article key={idx} className="group flex flex-col">
                 <div className="aspect-16/10 overflow-hidden rounded-2rem mb-6 shadow-sm group-hover:shadow-md transition-shadow relative">
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur text-stone-800 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                     {post.category}

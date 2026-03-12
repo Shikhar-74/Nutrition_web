@@ -26,10 +26,12 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
 <div className="aspect-3/4 rounded-3xl overflow-hidden shadow-2xl relative">
-  <img 
+  <Image 
     src="/Prashant.jpeg"
     alt="Dr. Prashant"
-    className="w-full h-full object-cover"
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-cover"
   />
 </div>
               <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-emerald-100 rounded-full -z-10"></div>

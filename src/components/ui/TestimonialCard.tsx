@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import Image from "next/image";
 
 interface TestimonialCardProps {
   name: string;
@@ -11,9 +12,11 @@ export default function TestimonialCard({ name, role, content, image }: Testimon
   return (
     <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-md border border-stone-100 flex flex-col h-full relative mt-6 transition-all duration-300">
       <div className="absolute -top-8 left-8">
-        <img 
+        <Image 
           src={image} 
           alt={name} 
+          width={64}
+          height={64}
           className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md transform hover:scale-105 transition-transform"
         />
       </div>

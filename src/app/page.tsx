@@ -8,106 +8,38 @@ import DietCategoryCard from "@/components/ui/DietCategoryCard";
 import BlogCard from "@/components/ui/BlogCard";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import BMICalculator from "@/components/ui/BMICalculator";
+import HeroSection from "@/components/sections/HeroSection";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      {/* Hero Section */}
-      <section className="relative w-full overflow-hidden bg-stone-50 min-h-[90vh] flex items-center">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-50 rounded-l-[100px] opacity-50 hidden lg:block z-0"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-1/2 -left-24 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20 lg:py-0">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-2xl">
-              <span className="inline-block py-1 px-3 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-6 tracking-wide uppercase">
-                Expert Nutritionist & Dietitian
-              </span>
-              <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-stone-900">
-                Eat right, <br/>
-                <span className="text-emerald-600">live brilliant.</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-stone-600 mb-8 leading-relaxed max-w-lg">
-                Transform your health with personalized nutrition plans and expert guidance tailored to your unique lifestyle.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="https://wa.me/917408856265?text=Hello%20Dr.%20Prashant%2C%20I%20would%20like%20to%20book%20a%20nutrition%20consultation." 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex justify-center items-center px-8 py-4 bg-emerald-600 text-white rounded-full font-semibold text-lg hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-200 hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  Book Consultation
-                </a>
-                <Link href="/services" className="inline-flex justify-center items-center px-8 py-4 bg-white text-emerald-700 border border-emerald-200 rounded-full font-semibold text-lg hover:bg-emerald-50 hover:border-emerald-300 transition-all duration-300">
-                  View Diet Plans
-                </Link>
-              </div>
-              
-              <div className="mt-12 flex items-center gap-6">
-                <div className="flex -space-x-3">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-stone-200 overflow-hidden">
-                      <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Patient" className="w-full h-full object-cover" />
-                    </div>
-                  ))}
-                  <div className="w-10 h-10 rounded-full border-2 border-white bg-emerald-100 flex items-center justify-center text-emerald-700 text-xs font-bold">
-                    5k+
-                  </div>
-                </div>
-                <div className="text-sm font-medium text-stone-600">
-                  <span className="block font-bold text-stone-900">Happy Patients</span>
-                  Trust our expertise
-                </div>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-lg lg:max-w-none pt-12 lg:pt-0">
-            <div className="relative rounded-2rem overflow-hidden shadow-2xl shadow-emerald-900/10 border-8 border-white/50 bg-white aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] group">
-  <img 
-    src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2070&auto=format&fit=crop"
-    alt="Premium healthy nutrition meal"
-    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-  />
-</div>
-              {/* Floating Badge */}
-              <div className="absolute bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce-slow border border-stone-100  sm:flex">
-                <div className="bg-emerald-100 p-3 rounded-full text-emerald-600">
-                  <HeartPulse className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="font-bold text-stone-900 leading-none mb-1">10+ Years</p>
-                  <p className="text-sm text-stone-500">Experience</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Introduction Section */}
-      <section className="py-24 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-background w-full">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-         <div className="aspect-square sm:aspect-4/5 rounded-2rem overflow-hidden shadow-2xl relative">
-  <img 
-    src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop" 
-    alt="Nutrition consultation" 
-    className="w-full h-full object-cover"
-  />
-</div>
-              <div className="absolute -z-10 -bottom-8 -right-8 w-64 h-64 bg-emerald-50 rounded-full"></div>
+              <div className="aspect-square sm:aspect-4/5 rounded-4xl overflow-hidden shadow-2xl relative">
+                <Image 
+                  src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Nutrition consultation" 
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -z-10 -bottom-8 -right-8 w-64 h-64 bg-[#E8EDE5] rounded-full"></div>
             </div>
             
             <div>
-              <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">About Dr. Prashant</h2>
-              <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900 mb-6 leading-tight">
+              <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">About Dr. Prashant</h2>
+              <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Your partner in achieving complete wellness.
               </h3>
-              <p className="text-lg text-stone-600 mb-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 With over a decade of experience in clinical nutrition and holistic health, I believe that food is medicine. My approach isn't about restrictive diets; it's about finding real, sustainable balance that works for your body and your lifestyle.
               </p>
               
@@ -118,36 +50,36 @@ export default function Home() {
                   "Focus on Sustainable Habits",
                   "Holistic Lifestyle Guidance"
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center text-stone-700 font-medium">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-500 mr-3 shrink-0" />
+                  <li key={idx} className="flex items-center text-foreground font-medium">
+                    <CheckCircle2 className="w-6 h-6 text-nutrition-primary mr-3 shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
               
-              <Link href="/about" className="inline-flex items-center text-lg font-semibold text-emerald-600 hover:text-emerald-700 group">
+              <Link href="/about" className="inline-flex items-center text-lg font-semibold text-nutrition-primary hover:text-nutrition-dark group">
                 More about my philosophy
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Services Overview Section */}
-      <section className="py-24 bg-stone-50 w-full relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-[#E8EDE5]/20 w-full relative">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">What We Offer</h2>
-            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900 mb-6">
+            <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">What We Offer</h2>
+            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
               Services tailored to your goals
             </h3>
-            <p className="text-lg text-stone-600">
+            <p className="text-lg text-muted-foreground">
               Whether you're looking to lose weight, manage a medical condition, or simply boost your daily energy, we have a specialized program for you.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Reveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" stagger>
             <ServiceCard 
               title="Weight Management"
               description="Sustainable weight loss or gain programs designed around your lifestyle, without starving."
@@ -172,39 +104,39 @@ export default function Home() {
               icon={<HeartPulse className="w-7 h-7" />}
               href="/services"
             />
-          </div>
+          </Reveal>
           
-          <div className="text-center mt-12">
-            <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 bg-white text-stone-900 shadow-sm border border-stone-200 rounded-full font-semibold hover:border-emerald-500 hover:shadow-md transition-all duration-300">
+          <div className="text-center mt-16">
+            <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 bg-white text-foreground shadow-sm border border-muted rounded-full font-semibold hover:border-nutrition-primary hover:shadow-md transition-all duration-300">
               View All Services
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* BMI Calculator Section */}
-      <section className="py-20 bg-emerald-50 w-full relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-background w-full relative">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">Health Check</h2>
-              <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900 mb-6">
+              <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">Health Check</h2>
+              <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
                 Know where you stand.
               </h3>
-              <p className="text-lg text-stone-600 mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Body Mass Index (BMI) is a simple calculation using a person's height and weight. The formula is BMI = kg/m2 where kg is a person's weight in kilograms and m2 is their height in metres squared.
               </p>
               <ul className="space-y-4 mb-8">
-                <li className="flex items-center text-stone-700 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 mr-3 shrink-0" />
+                <li className="flex items-center text-foreground font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-nutrition-primary mr-3 shrink-0" />
                   Quick and easy health indicator
                 </li>
-                <li className="flex items-center text-stone-700 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 mr-3 shrink-0" />
+                <li className="flex items-center text-foreground font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-nutrition-primary mr-3 shrink-0" />
                   Helps determine weight category
                 </li>
-                <li className="flex items-center text-stone-700 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 mr-3 shrink-0" />
+                <li className="flex items-center text-foreground font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-nutrition-primary mr-3 shrink-0" />
                   First step towards a personalized plan
                 </li>
               </ul>
@@ -213,23 +145,23 @@ export default function Home() {
               <BMICalculator />
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Diet Plan Categories */}
-      <section className="py-24 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-[#E8EDE5]/20 w-full">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">Specialized Programs</h2>
-            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900 mb-6">
+            <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">Specialized Programs</h2>
+            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
               Diet Plans for Every Need
             </h3>
-            <p className="text-lg text-stone-600">
+            <p className="text-lg text-muted-foreground">
               Browse our most popular nutrition programs, designed specifically to address unique health challenges and lifestyle goals.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Reveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" stagger>
             <DietCategoryCard 
               title="Weight Loss Diet"
               description="A balanced, sustainable approach to shedding fat without losing energy or starving yourself."
@@ -255,24 +187,24 @@ export default function Home() {
               description="High-protein tailored plans for athletes and gym-goers looking to bulk up cleanly."
               image="https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?q=80&w=2070&auto=format&fit=crop"
             />
-          </div>
-        </div>
+          </Reveal>
+        </Reveal>
       </section>
 
       {/* Before / After Transformation Section */}
-      <section className="py-24 bg-stone-50 w-full relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-background w-full relative">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">Real Results</h2>
-            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900 mb-6">
+            <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">Real Results</h2>
+            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
               Incredible Transformations
             </h3>
-            <p className="text-lg text-stone-600">
+            <p className="text-lg text-muted-foreground">
               See what dedication and the right nutritional guidance can achieve. Real people, real life-changing results.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Reveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" stagger>
             <TransformationCard 
               beforeImage="https://images.unsplash.com/photo-1534260933201-158eb0939523?w=500&auto=format&fit=crop"
               afterImage="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&auto=format&fit=crop"
@@ -291,21 +223,21 @@ export default function Home() {
               resultDetails="Gained 8kg Lean Muscle"
               testimonial="From skinny-fat to confident. The high-protein Indian diet plan worked wonders for my physique."
             />
-          </div>
-        </div>
+          </Reveal>
+        </Reveal>
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-[#E8EDE5]/20 w-full">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">Testimonials</h2>
-            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900">
+            <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">Testimonials</h2>
+            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground">
               Stories of Transformation
             </h3>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Reveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" stagger>
             <TestimonialCard 
               name="Sarah Jenkins"
               role="Lost 15kg in 6 months"
@@ -342,27 +274,27 @@ export default function Home() {
               content="Losing pregnancy weight seemed impossible while nursing. Dr. Prashant's nutrient-dense plan gave me energy and helped me get back in shape!"
               image="https://i.pravatar.cc/150?img=9"
             />
-          </div>
-        </div>
+          </Reveal>
+        </Reveal>
       </section>
 
       {/* Blog / Nutrition Tips Section */}
-      <section className="py-24 bg-stone-50 w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-background w-full">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">Nutrition Tips</h2>
-              <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900">
+              <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">Nutrition Tips</h2>
+              <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground">
                 Latest from the Blog
               </h3>
             </div>
-            <Link href="#" className="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 group">
+            <Link href="#" className="inline-flex items-center text-nutrition-primary font-semibold hover:text-nutrition-dark group">
               View All Articles
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Reveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" stagger>
             <BlogCard 
               title="10 Foods for Fast Weight Loss"
               description="Incorporate these metabolism-boosting superfoods into your daily diet to accelerate fat burn..."
@@ -387,16 +319,16 @@ export default function Home() {
               image="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop"
               readTime="5 min read"
             />
-          </div>
-        </div>
+          </Reveal>
+        </Reveal>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-[#E8EDE5]/20 w-full">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-emerald-600 font-semibold tracking-wide uppercase mb-3">Got Questions?</h2>
-            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900 mb-6">
+            <h2 className="text-nutrition-primary font-semibold tracking-wide uppercase mb-3">Got Questions?</h2>
+            <h3 className="font-heading text-4xl sm:text-5xl font-bold text-foreground mb-6">
               Frequently Asked Questions
             </h3>
           </div>
@@ -420,17 +352,17 @@ export default function Home() {
               }
             ]}
           />
-        </div>
+        </Reveal>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 w-full relative overflow-hidden bg-emerald-900">
+      <section className="py-32 w-full relative overflow-hidden bg-nutrition-dark">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <Reveal className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="font-heading text-4xl sm:text-6xl font-bold text-white mb-6">
             Ready to start your health journey?
           </h2>
-          <p className="text-xl text-emerald-100 mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-nutrition-accent mb-10 leading-relaxed max-w-2xl mx-auto font-light">
             Book a complimentary 15-minute discovery call to discuss your goals and how we can achieve them together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -438,15 +370,14 @@ export default function Home() {
               href="https://wa.me/917408856265?text=Hello%20Dr.%20Prashant%2C%20I%20would%20like%20to%20book%20a%20nutrition%20consultation." 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex justify-center items-center px-8 py-4 bg-emerald-500 text-white rounded-full font-bold text-lg hover:bg-emerald-400 hover:shadow-lg transition-all duration-300"
+              className="inline-flex justify-center items-center px-9 py-4 bg-nutrition-accent text-nutrition-dark rounded-full font-bold text-lg hover:bg-white hover:shadow-2xl hover:shadow-nutrition-accent/30 transition-all duration-300 hover:-translate-y-1"
             >
               <CalendarCheck className="w-5 h-5 mr-2" />
               Book Appointment
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </div>
-
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 interface BlogCardProps {
@@ -18,11 +19,13 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <div className="bg-white rounded-2xl shadow-md border border-stone-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-      <div className="h-48 overflow-hidden">
-        <img
+      <div className="h-48 overflow-hidden relative">
+        <Image
           src={image}
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <div className="p-6 flex-1 flex flex-col">

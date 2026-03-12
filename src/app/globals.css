@@ -1,61 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf9; /* stone-50 */
-  --foreground: #1c1917; /* stone-900 */
+  --background: #FDFCF8; /* Custom premium cream background */
+  --foreground: #111812; /* Deep dark green-tinted text */
+  --muted: #E8EDE5;
+  --muted-foreground: #6A7768;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-heading: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  --color-nutrition-dark: #1F3624;
+  --color-nutrition-primary: #2B5740;
+  --color-nutrition-accent: #BCE2B9;
+
+  --animate-blob: blob 9s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-bounce-slow: bounce-slow 4s infinite ease-in-out;
+  --animate-float: float 6s infinite ease-in-out;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
+  /* Optional: a very subtle grain or noise can be added via a pseudo-element if needed */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
 
-/* Custom scrollbar for better aesthetics */
+/* Base custom selection */
+::selection {
+  background-color: var(--color-nutrition-accent);
+  color: var(--color-nutrition-dark);
+}
+
+/* Custom scrollbar for better aesthetics, specifically targeting webkit */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f5f4; /* stone-100 */
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #a7f3d0; /* emerald-200 */
+  background: var(--color-nutrition-accent);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #34d399; /* emerald-400 */
+  background: var(--color-nutrition-primary);
 }
 
+/* Premium Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(31, 54, 36, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Lenis Recommended CSS for Smooth Scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Keyframes */
 @keyframes blob {
   0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
+  33% { transform: translate(40px, -60px) scale(1.05); }
+  66% { transform: translate(-30px, 30px) scale(0.95); }
   100% { transform: translate(0px, 0px) scale(1); }
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
 @keyframes bounce-slow {
-  0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
-  50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(0); }
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 3s infinite;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }

@@ -10,14 +10,22 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description, icon, href = "/services" }: ServiceCardProps) {
   return (
-    <div className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl hover:shadow-emerald-100 border border-stone-100 transition-all duration-300 flex flex-col h-full transform hover:-translate-y-1">
-      <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+    <div className="group relative bg-white/80 backdrop-blur-md rounded-[2rem] p-8 shadow-sm hover:shadow-2xl hover:shadow-[#2B5740]/10 border border-white/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col h-full z-10">
+      {/* Hover Background Reveal */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E8EDE5]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+      
+      <div className="w-16 h-16 bg-[#E8EDE5] text-[#2B5740] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-[#1F3624] group-hover:text-[#BCE2B9] group-hover:rotate-3 transition-all duration-500 ease-out shadow-sm">
         {icon}
       </div>
-      <h3 className="text-xl font-heading font-bold text-stone-900 mb-4">{title}</h3>
-      <p className="text-stone-600 mb-6 grow leading-relaxed">{description}</p>
-      <Link href={href} className="inline-flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors">
-        Read more <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      <h3 className="text-2xl font-heading font-bold text-foreground mb-4 group-hover:text-[#2B5740] transition-colors duration-300">{title}</h3>
+      <p className="text-muted-foreground mb-8 flex-grow leading-relaxed font-light">{description}</p>
+      
+      <Link href={href} className="inline-flex items-center text-[#2B5740] font-semibold group-hover:text-[#1F3624] transition-colors mt-auto uppercase tracking-wider text-sm">
+        Read more 
+        <span className="relative overflow-hidden ml-2 w-5 h-5 flex items-center justify-center">
+          <ArrowRight className="absolute w-4 h-4 -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 ease-out" />
+          <ArrowRight className="absolute w-4 h-4 translate-x-0 opacity-100 group-hover:translate-x-full group-hover:opacity-0 transition-all duration-500 ease-out" />
+        </span>
       </Link>
     </div>
   );

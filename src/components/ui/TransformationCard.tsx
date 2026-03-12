@@ -14,30 +14,34 @@ export default function TransformationCard({
   testimonial,
 }: TransformationCardProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-stone-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-      <div className="flex aspect-video w-full overflow-hidden relative">
-        <div className="w-1/2 relative">
-          <img
+    <div className="bg-white/90 backdrop-blur-md rounded-[2rem] shadow-lg border border-white/50 overflow-hidden hover:shadow-2xl hover:shadow-[#2B5740]/15 hover:-translate-y-2 transition-all duration-500 group flex flex-col">
+      <div className="flex aspect-video w-full overflow-hidden relative border-b border-muted">
+        <div className="w-1/2 relative overflow-hidden bg-stone-100">
+          <Image
             src={beforeImage}
             alt="Before Transformation"
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover filter grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out mix-blend-multiply sm:mix-blend-normal"
           />
-          <div className="absolute top-2 left-2 bg-stone-900/70 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">Before</div>
+          <div className="absolute top-3 left-3 bg-[#1F3624]/80 text-white text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full font-bold backdrop-blur-md">Before</div>
         </div>
-        <div className="w-1/2 relative border-l-4 border-emerald-500">
-          <img
+        <div className="w-1/2 relative border-l-[3px] border-[#BCE2B9] overflow-hidden bg-stone-100">
+          <Image
             src={afterImage}
             alt="After Transformation"
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           />
-          <div className="absolute top-2 right-2 bg-emerald-600/90 text-white text-xs px-2 py-1 rounded font-semibold backdrop-blur-sm">After</div>
+          <div className="absolute top-3 right-3 bg-[#2B5740]/90 text-white text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full font-bold backdrop-blur-md">After</div>
         </div>
       </div>
-      <div className="p-6">
-        <div className="inline-block py-1 px-3 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold mb-4">
+      <div className="p-8 flex-grow flex flex-col">
+        <div className="inline-block self-start py-1.5 px-4 rounded-full bg-[#E8EDE5] text-[#2B5740] text-xs font-extrabold tracking-wide mb-6 uppercase">
           {resultDetails}
         </div>
-        <p className="text-stone-600 italic">"{testimonial}"</p>
+        <p className="text-muted-foreground italic leading-relaxed font-light text-black/80">"{testimonial}"</p>
       </div>
     </div>
   );
