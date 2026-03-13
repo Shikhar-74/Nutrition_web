@@ -48,6 +48,19 @@ export default function HeroSection() {
       ref={containerRef}
       className="relative w-full overflow-hidden bg-background min-h-[95vh] flex items-center pt-24 pb-16 lg:py-0"
     >
+      {/* Subtle Hero Background Image with Blue Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <Image 
+          src="/hero-bg.png"
+          alt="Healthy food background"
+          fill
+          priority
+          className="object-cover object-center opacity-15"
+        />
+        {/* Soft Blue Tint Overlay */}
+        <div className="absolute inset-0 bg-[#E0F2FE]/40 mix-blend-multiply"></div>
+      </div>
+
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-[#E8EDE5] lg:rounded-l-[160px] opacity-40 z-0"></div>
 
