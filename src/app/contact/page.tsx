@@ -72,11 +72,16 @@ export default function Contact() {
 
             {/* Map Placeholder */}
             <div className="bg-stone-200 h-64 rounded-2rem overflow-hidden relative shadow-sm border border-stone-200 group">
-              <div className="absolute inset-0 bg-stone-100 flex flex-col items-center justify-center text-stone-500 hover:bg-stone-50 transition-colors">
-                <Globe className="w-10 h-10 mb-3 text-stone-400 group-hover:text-emerald-500 transition-colors" />
-                <span className="font-semibold text-stone-600">Interactive Map Integration</span>
-                <span className="text-xs mt-1">Google Maps API required</span>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.455845822444!2d80.35023947564734!3d26.473263878837162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c38a645603a8b%3A0x6f19ae5f63ac4fd5!2sZ%20Square%20Mall!5e0!3m2!1sen!2sin!4v1773393300551!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
 
